@@ -6,11 +6,8 @@
 
 package Package2;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import Package2.Login_Signup;
 import javax.swing.text.BadLocationException;
-import javax.swing.text.Document;
-import javax.swing.text.MutableAttributeSet;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
@@ -45,6 +42,11 @@ public class Learning_app extends javax.swing.JFrame {
         C2 = new javax.swing.JButton();
         Cpp = new javax.swing.JButton();
         C = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         Home = new javax.swing.JPanel();
@@ -62,7 +64,15 @@ public class Learning_app extends javax.swing.JFrame {
         Cpp1 = new javax.swing.JButton();
         C3 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea5 = new javax.swing.JTextArea();
+        jLabel19 = new javax.swing.JLabel();
         JavaContent = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         GetStarted = new javax.swing.JButton();
@@ -126,7 +136,6 @@ public class Learning_app extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1366, 730));
-        setPreferredSize(new java.awt.Dimension(1366, 730));
         getContentPane().setLayout(null);
 
         jPanel3.setBackground(new java.awt.Color(223, 106, 106));
@@ -137,6 +146,16 @@ public class Learning_app extends javax.swing.JFrame {
         HomeButton.setFocusCycleRoot(true);
         HomeButton.setFocusTraversalPolicyProvider(true);
         HomeButton.setSelected(true);
+        HomeButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                HomeButtonMouseMoved(evt);
+            }
+        });
+        HomeButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                HomeButtonMouseExited(evt);
+            }
+        });
         HomeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HomeButtonActionPerformed(evt);
@@ -149,6 +168,16 @@ public class Learning_app extends javax.swing.JFrame {
         Java1.setForeground(new java.awt.Color(102, 102, 0));
         Java1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/java.png"))); // NOI18N
         Java1.setContentAreaFilled(false);
+        Java1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                Java1MouseMoved(evt);
+            }
+        });
+        Java1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Java1MouseExited(evt);
+            }
+        });
         Java1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Java1ActionPerformed(evt);
@@ -162,6 +191,16 @@ public class Learning_app extends javax.swing.JFrame {
         Python1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/python.png"))); // NOI18N
         Python1.setContentAreaFilled(false);
         Python1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Python1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                Python1MouseMoved(evt);
+            }
+        });
+        Python1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Python1MouseExited(evt);
+            }
+        });
         Python1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Python1ActionPerformed(evt);
@@ -188,6 +227,16 @@ public class Learning_app extends javax.swing.JFrame {
         Cpp.setForeground(new java.awt.Color(102, 102, 0));
         Cpp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/c (2).png"))); // NOI18N
         Cpp.setContentAreaFilled(false);
+        Cpp.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                CppMouseMoved(evt);
+            }
+        });
+        Cpp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CppMouseExited(evt);
+            }
+        });
         Cpp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CppActionPerformed(evt);
@@ -200,6 +249,16 @@ public class Learning_app extends javax.swing.JFrame {
         C.setForeground(new java.awt.Color(102, 102, 0));
         C.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/c.png"))); // NOI18N
         C.setContentAreaFilled(false);
+        C.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                CMouseMoved(evt);
+            }
+        });
+        C.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CMouseExited(evt);
+            }
+        });
         C.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CActionPerformed(evt);
@@ -207,6 +266,16 @@ public class Learning_app extends javax.swing.JFrame {
         });
         jPanel3.add(C);
         C.setBounds(30, 330, 61, 57);
+        jPanel3.add(jLabel1);
+        jLabel1.setBounds(100, 40, 70, 30);
+        jPanel3.add(jLabel2);
+        jLabel2.setBounds(90, 240, 50, 30);
+        jPanel3.add(jLabel8);
+        jLabel8.setBounds(90, 340, 50, 30);
+        jPanel3.add(jLabel15);
+        jLabel15.setBounds(90, 460, 50, 30);
+        jPanel3.add(jLabel17);
+        jLabel17.setBounds(90, 580, 50, 30);
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(0, 0, 140, 730);
@@ -218,37 +287,47 @@ public class Learning_app extends javax.swing.JFrame {
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
         jTabbedPane1.setOpaque(true);
 
-        Home.setBackground(new java.awt.Color(51, 255, 255));
+        Home.setBackground(java.awt.SystemColor.activeCaption);
         Home.setLayout(null);
 
-        jLabel5.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Consolas", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Welcome!!");
         Home.add(jLabel5);
-        jLabel5.setBounds(450, 0, 210, 44);
+        jLabel5.setBounds(480, 0, 210, 44);
 
         jLabel6.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("To");
         Home.add(jLabel6);
-        jLabel6.setBounds(510, 50, 50, 36);
+        jLabel6.setBounds(550, 50, 50, 36);
 
         jLabel7.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("rogramming");
         Home.add(jLabel7);
-        jLabel7.setBounds(420, 100, 204, 48);
+        jLabel7.setBounds(460, 100, 204, 48);
 
-        jLabel10.setFont(new java.awt.Font("Segoe Script", 3, 48)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Segoe Script", 3, 50)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 160, 168));
         jLabel10.setText("P");
         Home.add(jLabel10);
-        jLabel10.setBounds(380, 100, 66, 48);
+        jLabel10.setBounds(430, 100, 66, 48);
 
         Java.setBackground(new java.awt.Color(255, 255, 255));
         Java.setForeground(new java.awt.Color(102, 102, 0));
         Java.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/java.png"))); // NOI18N
         Java.setContentAreaFilled(false);
+        Java.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                JavaMouseMoved(evt);
+            }
+        });
+        Java.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                JavaMouseExited(evt);
+            }
+        });
         Java.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JavaActionPerformed(evt);
@@ -262,6 +341,16 @@ public class Learning_app extends javax.swing.JFrame {
         Python.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/python.png"))); // NOI18N
         Python.setContentAreaFilled(false);
         Python.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Python.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                PythonMouseMoved(evt);
+            }
+        });
+        Python.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                PythonMouseExited(evt);
+            }
+        });
         Python.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PythonActionPerformed(evt);
@@ -308,6 +397,16 @@ public class Learning_app extends javax.swing.JFrame {
         Cpp1.setForeground(new java.awt.Color(102, 102, 0));
         Cpp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/c (2).png"))); // NOI18N
         Cpp1.setContentAreaFilled(false);
+        Cpp1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                Cpp1MouseMoved(evt);
+            }
+        });
+        Cpp1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Cpp1MouseExited(evt);
+            }
+        });
         Cpp1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Cpp1ActionPerformed(evt);
@@ -320,6 +419,16 @@ public class Learning_app extends javax.swing.JFrame {
         C3.setForeground(new java.awt.Color(102, 102, 0));
         C3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/c.png"))); // NOI18N
         C3.setContentAreaFilled(false);
+        C3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                C3MouseMoved(evt);
+            }
+        });
+        C3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                C3MouseExited(evt);
+            }
+        });
         C3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 C3ActionPerformed(evt);
@@ -330,6 +439,16 @@ public class Learning_app extends javax.swing.JFrame {
 
         jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Downloads\\logout.png")); // NOI18N
         jButton2.setContentAreaFilled(false);
+        jButton2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jButton2MouseMoved(evt);
+            }
+        });
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton2MouseExited(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -338,9 +457,103 @@ public class Learning_app extends javax.swing.JFrame {
         Home.add(jButton2);
         jButton2.setBounds(580, 533, 90, 80);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/fotis-fotopoulos-xQ2qynQ92xs-unsplash.jpg"))); // NOI18N
-        Home.add(jLabel1);
-        jLabel1.setBounds(-6, -6, 1230, 640);
+        jScrollPane3.setBorder(null);
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane3.setEnabled(false);
+        jScrollPane3.setFocusable(false);
+        jScrollPane3.setOpaque(false);
+        jScrollPane3.setVerifyInputWhenFocusTarget(false);
+        jScrollPane3.setWheelScrollingEnabled(false);
+
+        jTextArea2.setEditable(false);
+        jTextArea2.setBackground(java.awt.SystemColor.activeCaption);
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jTextArea2.setAutoscrolls(false);
+        jTextArea2.setBorder(null);
+        jTextArea2.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        jTextArea2.setHighlighter(null);
+        jTextArea2.setKeymap(null);
+        jTextArea2.setOpaque(false);
+        jScrollPane3.setViewportView(jTextArea2);
+
+        Home.add(jScrollPane3);
+        jScrollPane3.setBounds(130, 240, 300, 110);
+
+        jScrollPane4.setBorder(null);
+        jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane4.setEnabled(false);
+        jScrollPane4.setFocusable(false);
+        jScrollPane4.setOpaque(false);
+        jScrollPane4.setVerifyInputWhenFocusTarget(false);
+        jScrollPane4.setWheelScrollingEnabled(false);
+
+        jTextArea3.setEditable(false);
+        jTextArea3.setBackground(java.awt.SystemColor.activeCaption);
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jTextArea3.setAutoscrolls(false);
+        jTextArea3.setBorder(null);
+        jTextArea3.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        jTextArea3.setHighlighter(null);
+        jTextArea3.setKeymap(null);
+        jTextArea3.setOpaque(false);
+        jScrollPane4.setViewportView(jTextArea3);
+
+        Home.add(jScrollPane4);
+        jScrollPane4.setBounds(130, 390, 300, 110);
+
+        jScrollPane5.setBorder(null);
+        jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane5.setEnabled(false);
+        jScrollPane5.setFocusable(false);
+        jScrollPane5.setOpaque(false);
+        jScrollPane5.setVerifyInputWhenFocusTarget(false);
+        jScrollPane5.setWheelScrollingEnabled(false);
+
+        jTextArea4.setEditable(false);
+        jTextArea4.setBackground(java.awt.SystemColor.activeCaption);
+        jTextArea4.setColumns(20);
+        jTextArea4.setRows(5);
+        jTextArea4.setAutoscrolls(false);
+        jTextArea4.setBorder(null);
+        jTextArea4.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        jTextArea4.setHighlighter(null);
+        jTextArea4.setKeymap(null);
+        jTextArea4.setOpaque(false);
+        jScrollPane5.setViewportView(jTextArea4);
+
+        Home.add(jScrollPane5);
+        jScrollPane5.setBounds(680, 220, 360, 110);
+
+        jScrollPane6.setBorder(null);
+        jScrollPane6.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane6.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane6.setEnabled(false);
+        jScrollPane6.setFocusable(false);
+        jScrollPane6.setOpaque(false);
+        jScrollPane6.setVerifyInputWhenFocusTarget(false);
+        jScrollPane6.setWheelScrollingEnabled(false);
+
+        jTextArea5.setEditable(false);
+        jTextArea5.setBackground(java.awt.SystemColor.activeCaption);
+        jTextArea5.setColumns(20);
+        jTextArea5.setRows(5);
+        jTextArea5.setAutoscrolls(false);
+        jTextArea5.setBorder(null);
+        jTextArea5.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        jTextArea5.setHighlighter(null);
+        jTextArea5.setKeymap(null);
+        jTextArea5.setOpaque(false);
+        jScrollPane6.setViewportView(jTextArea5);
+
+        Home.add(jScrollPane6);
+        jScrollPane6.setBounds(680, 390, 360, 120);
+        Home.add(jLabel19);
+        jLabel19.setBounds(660, 550, 70, 30);
 
         jTabbedPane1.addTab("home", Home);
 
@@ -497,539 +710,514 @@ public class Learning_app extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("java1", JavaContent);
 
-        Unit1.setBackground(new java.awt.Color(240, 152, 91));
+        Unit1.setBackground(java.awt.SystemColor.activeCaption);
 
-        jScrollPane2.setAutoscrolls(true);
+        jScrollPane2.setBackground(new java.awt.Color(223, 106, 106));
+        jScrollPane2.setBorder(null);
         jScrollPane2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane2.setFocusable(false);
         jScrollPane2.setOpaque(false);
+        jScrollPane2.setViewportView(null);
 
         jTextPane1.setEditable(false);
-        jTextPane1.setBackground(new java.awt.Color(223, 133, 133));
+        jTextPane1.setBackground(new java.awt.Color(223, 106, 106));
+        jTextPane1.setBorder(null);
         jTextPane1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jTextPane1.setText("Java programming language was originally developed by Sun Microsystems which was initiated by James Gosling and released in 1995 as core component of Sun Microsystems' Java platform (Java 1.0 [J2SE]).\n\nThe latest release of the Java Standard Edition is Java SE 8. With the advancement of Java and its widespread popularity, multiple configurations were built to suit various types of platforms. For example: J2EE for Enterprise Applications, J2ME for Mobile Applications.\n\nThe new J2 versions were renamed as Java SE, Java EE, and Java ME respectively. Java is guaranteed to be Write Once, Run Anywhere.\n\nJava is −\n\nObject Oriented − In Java, everything is an Object. Java can be easily extended since it is based on the Object model.\n\nPlatform Independent − Unlike many other programming languages including C and C++, when Java is compiled, it is not compiled into platform specific machine, rather into platform independent byte code. This byte code is distributed over the web and interpreted by the Virtual Machine (JVM) on whichever platform it is being run on.\n\nSimple − Java is designed to be easy to learn. If you understand the basic concept of OOP Java, it would be easy to master.\n\nSecure − With Java's secure feature it enables to develop virus-free, tamper-free systems. Authentication techniques are based on public-key encryption.\n\nArchitecture-neutral − Java compiler generates an architecture-neutral object file format, which makes the compiled code executable on many processors, with the presence of Java runtime system.\n\nPortable − Being architecture-neutral and having no implementation dependent aspects of the specification makes Java portable. Compiler in Java is written in ANSI C with a clean portability boundary, which is a POSIX subset.\n\nRobust − Java makes an effort to eliminate error prone situations by emphasizing mainly on compile time error checking and runtime checking.\n\nMultithreaded − With Java's multithreaded feature it is possible to write programs that can perform many tasks simultaneously. This design feature allows the developers to construct interactive applications that can run smoothly.\n\nInterpreted − Java byte code is translated on the fly to native machine instructions and is not stored anywhere. The development process is more rapid and analytical since the linking is an incremental and light-weight process.\n\nHigh Performance − With the use of Just-In-Time compilers, Java enables high performance.\n\nDistributed − Java is designed for the distributed environment of the internet.\n\nDynamic − Java is considered to be more dynamic than C or C++ since it is designed to adapt to an evolving environment. Java programs can carry extensive amount of run-time information that can be used to verify and resolve \naccesses to objects on run-time.\n\n\n\nHistory of Java\n\nJames Gosling initiated Java language project in June 1991 for use in one of his many set-top box projects. The language, initially called ‘Oak’ after an oak tree that stood outside Gosling's office, also went by the name ‘Green’ and ended up later being renamed as Java, from a list of random words.\n\nSun released the first public implementation as Java 1.0 in 1995. It promised Write Once, Run Anywhere (WORA), providing no-cost run-times on popular platforms.\n\nOn 13 November, 2006, Sun released much of Java as free and open source software under the terms of the GNU General Public License (GPL).\n\nOn 8 May, 2007, Sun finished the process, making all of Java's core code free and open-source, aside from a small portion of code to which Sun did not hold the copyright.\n\nTools You Will Need\nFor performing the examples discussed in this tutorial, you will need a Pentium 200-MHz computer with a minimum of 64 MB of RAM (128 MB of RAM recommended).\n\nYou will also need the following softwares −\n\nLinux 7.1 or Windows xp/7/8 operating system\nJava JDK 8\nMicrosoft Notepad or any other text editor\nThis tutorial will provide the necessary skills to create GUI, networking, and web applications using Java.");
         jTextPane1.setAutoscrolls(false);
-        jTextPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTextPane1.setFocusCycleRoot(false);
         jTextPane1.setName(""); // NOI18N
-        jTextPane1.setRequestFocusEnabled(false);
+        jTextPane1.setOpaque(false);
         jScrollPane2.setViewportView(jTextPane1);
-        try{
-            StyledDocument doc=jTextPane1.getStyledDocument();
-            StyledDocument doc1=jTextPane1.getStyledDocument();
 
-            SimpleAttributeSet text=new SimpleAttributeSet();
-            SimpleAttributeSet text1=new SimpleAttributeSet();
-            StyleConstants.setFontSize(text1, 15);
-            StyleConstants.setBold(text, true);
-            StyleConstants.setFontSize(text, 36);
+        javax.swing.GroupLayout Unit1Layout = new javax.swing.GroupLayout(Unit1);
+        Unit1.setLayout(Unit1Layout);
+        Unit1Layout.setHorizontalGroup(
+            Unit1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Unit1Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 15, Short.MAX_VALUE))
+        );
+        Unit1Layout.setVerticalGroup(
+            Unit1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Unit1Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
-            doc.insertString(0, "                                    1.Overview of Java\n\n", text);
-        }catch(BadLocationException e){
+        jScrollPane2.setBackground(new java.awt.Color(223, 133, 133));
+        jTextPane1.setBackground(new java.awt.Color(223, 133, 133));
 
-        }
+        jTabbedPane1.addTab("java2", Unit1);
 
-        //doc1.setParagraphAttributes(0, doc1.getLength(), left, true);
+        PythonContent.setBackground(new java.awt.Color(240, 152, 143));
+        PythonContent.setLayout(null);
 
-        /*
-        SimpleAttributeSet att=new SimpleAttributeSet();
-        SimpleAttributeSet attt=new SimpleAttributeSet();
-        StyleConstants.setAlignment(att, StyleConstants.ALIGN_CENTER);
-        StyleConstants.setBold(att, true);
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel9.setText("Content");
+        PythonContent.add(jLabel9);
+        jLabel9.setBounds(480, 10, 150, 40);
 
-        Document doc=jTextArea1.getDocument();
-        try{
+        GetStarted1.setBackground(new java.awt.Color(51, 255, 51));
+        GetStarted1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        GetStarted1.setText("Get Started");
+        GetStarted1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GetStarted1ActionPerformed(evt);
+            }
+        });
+        PythonContent.add(GetStarted1);
+        GetStarted1.setBounds(1090, 530, 130, 60);
 
-            doc.insertString(doc.getLength(),"Bold",att);
-            doc.insertString(doc.getLength(),"Bold1",attt);
-            doc.insertString(StyleConstants.ALIGN_CENTER,"hggh", att);
+        j12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j12.setText("1. Getting Started");
+        j12.setContentAreaFilled(false);
+        j12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j12ActionPerformed(evt);
+            }
+        });
+        PythonContent.add(j12);
+        j12.setBounds(0, 150, 250, 37);
 
-        }catch(BadLocationException e)
-        {*/
+        j13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j13.setText("2. Types");
+        j13.setContentAreaFilled(false);
+        j13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j13ActionPerformed(evt);
+            }
+        });
+        PythonContent.add(j13);
+        j13.setBounds(0, 190, 290, 37);
 
-            javax.swing.GroupLayout Unit1Layout = new javax.swing.GroupLayout(Unit1);
-            Unit1.setLayout(Unit1Layout);
-            Unit1Layout.setHorizontalGroup(
-                Unit1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(Unit1Layout.createSequentialGroup()
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 15, Short.MAX_VALUE))
-            );
-            Unit1Layout.setVerticalGroup(
-                Unit1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(Unit1Layout.createSequentialGroup()
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE))
-            );
+        j14.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j14.setText("3. Variables");
+        j14.setContentAreaFilled(false);
+        j14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j14ActionPerformed(evt);
+            }
+        });
+        PythonContent.add(j14);
+        j14.setBounds(0, 230, 250, 37);
 
-            jTabbedPane1.addTab("java2", Unit1);
+        j15.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j15.setText("4. Simple Expressions");
+        j15.setContentAreaFilled(false);
+        j15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j15ActionPerformed(evt);
+            }
+        });
+        PythonContent.add(j15);
+        j15.setBounds(0, 270, 370, 37);
 
-            PythonContent.setBackground(new java.awt.Color(240, 152, 143));
-            PythonContent.setLayout(null);
+        j16.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j16.setText("5. Advanced Types: Containers");
+        j16.setContentAreaFilled(false);
+        j16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j16ActionPerformed(evt);
+            }
+        });
+        PythonContent.add(j16);
+        j16.setBounds(0, 310, 380, 37);
 
-            jLabel9.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-            jLabel9.setText("Content");
-            PythonContent.add(jLabel9);
-            jLabel9.setBounds(480, 10, 150, 40);
+        j17.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j17.setText("6. A Bit More Iteration");
+        j17.setContentAreaFilled(false);
+        j17.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j17ActionPerformed(evt);
+            }
+        });
+        PythonContent.add(j17);
+        j17.setBounds(0, 350, 380, 37);
 
-            GetStarted1.setBackground(new java.awt.Color(51, 255, 51));
-            GetStarted1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-            GetStarted1.setText("Get Started");
-            GetStarted1.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    GetStarted1ActionPerformed(evt);
-                }
-            });
-            PythonContent.add(GetStarted1);
-            GetStarted1.setBounds(1090, 530, 130, 60);
+        j18.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j18.setText("7. Functions");
+        j18.setContentAreaFilled(false);
+        j18.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j18ActionPerformed(evt);
+            }
+        });
+        PythonContent.add(j18);
+        j18.setBounds(0, 390, 380, 37);
 
-            j12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j12.setText("1. Getting Started");
-            j12.setContentAreaFilled(false);
-            j12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j12.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j12ActionPerformed(evt);
-                }
-            });
-            PythonContent.add(j12);
-            j12.setBounds(0, 150, 250, 37);
+        j19.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j19.setText("8. Exceptions");
+        j19.setContentAreaFilled(false);
+        j19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j19ActionPerformed(evt);
+            }
+        });
+        PythonContent.add(j19);
+        j19.setBounds(0, 430, 380, 37);
 
-            j13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j13.setText("2. Types");
-            j13.setContentAreaFilled(false);
-            j13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j13.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j13ActionPerformed(evt);
-                }
-            });
-            PythonContent.add(j13);
-            j13.setBounds(0, 190, 290, 37);
+        j20.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j20.setText("9. Code Organization");
+        j20.setContentAreaFilled(false);
+        j20.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j20ActionPerformed(evt);
+            }
+        });
+        PythonContent.add(j20);
+        j20.setBounds(0, 470, 380, 37);
 
-            j14.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j14.setText("3. Variables");
-            j14.setContentAreaFilled(false);
-            j14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j14.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j14ActionPerformed(evt);
-                }
-            });
-            PythonContent.add(j14);
-            j14.setBounds(0, 230, 250, 37);
+        j21.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j21.setText("10. Working with Files");
+        j21.setContentAreaFilled(false);
+        j21.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j21ActionPerformed(evt);
+            }
+        });
+        PythonContent.add(j21);
+        j21.setBounds(-10, 510, 380, 37);
 
-            j15.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j15.setText("4. Simple Expressions");
-            j15.setContentAreaFilled(false);
-            j15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j15.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j15ActionPerformed(evt);
-                }
-            });
-            PythonContent.add(j15);
-            j15.setBounds(0, 270, 370, 37);
+        j22.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j22.setText("11. Interacting with the Outside World");
+        j22.setContentAreaFilled(false);
+        j22.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j22ActionPerformed(evt);
+            }
+        });
+        PythonContent.add(j22);
+        j22.setBounds(-10, 550, 480, 37);
 
-            j16.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j16.setText("5. Advanced Types: Containers");
-            j16.setContentAreaFilled(false);
-            j16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j16.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j16ActionPerformed(evt);
-                }
-            });
-            PythonContent.add(j16);
-            j16.setBounds(0, 310, 380, 37);
+        jTabbedPane1.addTab("java1", PythonContent);
 
-            j17.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j17.setText("6. A Bit More Iteration");
-            j17.setContentAreaFilled(false);
-            j17.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j17.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j17ActionPerformed(evt);
-                }
-            });
-            PythonContent.add(j17);
-            j17.setBounds(0, 350, 380, 37);
+        CppContent.setBackground(new java.awt.Color(240, 152, 143));
+        CppContent.setLayout(null);
 
-            j18.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j18.setText("7. Functions");
-            j18.setContentAreaFilled(false);
-            j18.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j18.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j18ActionPerformed(evt);
-                }
-            });
-            PythonContent.add(j18);
-            j18.setBounds(0, 390, 380, 37);
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel16.setText("Content");
+        CppContent.add(jLabel16);
+        jLabel16.setBounds(480, 0, 150, 40);
 
-            j19.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j19.setText("8. Exceptions");
-            j19.setContentAreaFilled(false);
-            j19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j19.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j19ActionPerformed(evt);
-                }
-            });
-            PythonContent.add(j19);
-            j19.setBounds(0, 430, 380, 37);
+        GetStarted2.setBackground(new java.awt.Color(51, 255, 51));
+        GetStarted2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        GetStarted2.setText("Get Started");
+        GetStarted2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GetStarted2ActionPerformed(evt);
+            }
+        });
+        CppContent.add(GetStarted2);
+        GetStarted2.setBounds(1090, 530, 130, 60);
 
-            j20.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j20.setText("9. Code Organization");
-            j20.setContentAreaFilled(false);
-            j20.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j20.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j20ActionPerformed(evt);
-                }
-            });
-            PythonContent.add(j20);
-            j20.setBounds(0, 470, 380, 37);
+        cp1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        cp1.setText("1. Introduction");
+        cp1.setContentAreaFilled(false);
+        cp1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        cp1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cp1ActionPerformed(evt);
+            }
+        });
+        CppContent.add(cp1);
+        cp1.setBounds(0, 150, 250, 37);
 
-            j21.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j21.setText("10. Working with Files");
-            j21.setContentAreaFilled(false);
-            j21.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j21.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j21ActionPerformed(evt);
-                }
-            });
-            PythonContent.add(j21);
-            j21.setBounds(-10, 510, 380, 37);
+        j24.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j24.setText("2. Basic C++ Elements");
+        j24.setContentAreaFilled(false);
+        j24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j24ActionPerformed(evt);
+            }
+        });
+        CppContent.add(j24);
+        j24.setBounds(0, 190, 290, 37);
 
-            j22.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j22.setText("11. Interacting with the Outside World");
-            j22.setContentAreaFilled(false);
-            j22.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j22.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j22ActionPerformed(evt);
-                }
-            });
-            PythonContent.add(j22);
-            j22.setBounds(-10, 550, 480, 37);
+        j25.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j25.setText("3. Input/Output");
+        j25.setContentAreaFilled(false);
+        j25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j25ActionPerformed(evt);
+            }
+        });
+        CppContent.add(j25);
+        j25.setBounds(0, 230, 250, 37);
 
-            jTabbedPane1.addTab("java1", PythonContent);
+        j26.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j26.setText("4. Selection Structures");
+        j26.setContentAreaFilled(false);
+        j26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j26ActionPerformed(evt);
+            }
+        });
+        CppContent.add(j26);
+        j26.setBounds(0, 270, 310, 37);
 
-            CppContent.setBackground(new java.awt.Color(240, 152, 143));
-            CppContent.setLayout(null);
+        j27.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j27.setText("5. Repetition Structures");
+        j27.setContentAreaFilled(false);
+        j27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j27ActionPerformed(evt);
+            }
+        });
+        CppContent.add(j27);
+        j27.setBounds(0, 310, 380, 37);
 
-            jLabel16.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-            jLabel16.setText("Content");
-            CppContent.add(jLabel16);
-            jLabel16.setBounds(480, 0, 150, 40);
+        j28.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j28.setText("6. Functions 1 - Predefined and Value-Returning Functions");
+        j28.setContentAreaFilled(false);
+        j28.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j28ActionPerformed(evt);
+            }
+        });
+        CppContent.add(j28);
+        j28.setBounds(0, 350, 670, 37);
 
-            GetStarted2.setBackground(new java.awt.Color(51, 255, 51));
-            GetStarted2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-            GetStarted2.setText("Get Started");
-            GetStarted2.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    GetStarted2ActionPerformed(evt);
-                }
-            });
-            CppContent.add(GetStarted2);
-            GetStarted2.setBounds(1090, 530, 130, 60);
+        j29.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j29.setText("7. Functions 2 - Void (NonValue-Returning) Functions");
+        j29.setContentAreaFilled(false);
+        j29.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j29ActionPerformed(evt);
+            }
+        });
+        CppContent.add(j29);
+        j29.setBounds(0, 390, 640, 37);
 
-            cp1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            cp1.setText("1. Introduction");
-            cp1.setContentAreaFilled(false);
-            cp1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            cp1.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    cp1ActionPerformed(evt);
-                }
-            });
-            CppContent.add(cp1);
-            cp1.setBounds(0, 150, 250, 37);
+        j30.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j30.setText("8. UDTs (User-Defined Types), Namespaces, and string Type");
+        j30.setContentAreaFilled(false);
+        j30.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j30ActionPerformed(evt);
+            }
+        });
+        CppContent.add(j30);
+        j30.setBounds(0, 430, 700, 37);
 
-            j24.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j24.setText("2. Basic C++ Elements");
-            j24.setContentAreaFilled(false);
-            j24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j24.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j24ActionPerformed(evt);
-                }
-            });
-            CppContent.add(j24);
-            j24.setBounds(0, 190, 290, 37);
+        j31.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j31.setText("9. Data Types, Arrays and Strings");
+        j31.setContentAreaFilled(false);
+        j31.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j31ActionPerformed(evt);
+            }
+        });
+        CppContent.add(j31);
+        j31.setBounds(0, 470, 560, 37);
 
-            j25.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j25.setText("3. Input/Output");
-            j25.setContentAreaFilled(false);
-            j25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j25.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j25ActionPerformed(evt);
-                }
-            });
-            CppContent.add(j25);
-            j25.setBounds(0, 230, 250, 37);
+        j32.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j32.setText("10. Pointers");
+        j32.setContentAreaFilled(false);
+        j32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j32ActionPerformed(evt);
+            }
+        });
+        CppContent.add(j32);
+        j32.setBounds(-10, 510, 380, 37);
 
-            j26.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j26.setText("4. Selection Structures");
-            j26.setContentAreaFilled(false);
-            j26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j26.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j26ActionPerformed(evt);
-                }
-            });
-            CppContent.add(j26);
-            j26.setBounds(0, 270, 310, 37);
+        jTabbedPane1.addTab("java1", CppContent);
 
-            j27.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j27.setText("5. Repetition Structures");
-            j27.setContentAreaFilled(false);
-            j27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j27.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j27ActionPerformed(evt);
-                }
-            });
-            CppContent.add(j27);
-            j27.setBounds(0, 310, 380, 37);
+        CContent.setBackground(new java.awt.Color(240, 152, 143));
+        CContent.setLayout(null);
 
-            j28.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j28.setText("6. Functions 1 - Predefined and Value-Returning Functions");
-            j28.setContentAreaFilled(false);
-            j28.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j28.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j28ActionPerformed(evt);
-                }
-            });
-            CppContent.add(j28);
-            j28.setBounds(0, 350, 670, 37);
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel18.setText("Contents");
+        CContent.add(jLabel18);
+        jLabel18.setBounds(490, 0, 150, 40);
 
-            j29.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j29.setText("7. Functions 2 - Void (NonValue-Returning) Functions");
-            j29.setContentAreaFilled(false);
-            j29.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j29.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j29ActionPerformed(evt);
-                }
-            });
-            CppContent.add(j29);
-            j29.setBounds(0, 390, 640, 37);
+        GetStarted3.setBackground(new java.awt.Color(51, 255, 51));
+        GetStarted3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        GetStarted3.setText("Get Started");
+        GetStarted3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GetStarted3ActionPerformed(evt);
+            }
+        });
+        CContent.add(GetStarted3);
+        GetStarted3.setBounds(1090, 530, 130, 60);
 
-            j30.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j30.setText("8. UDTs (User-Defined Types), Namespaces, and string Type");
-            j30.setContentAreaFilled(false);
-            j30.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j30.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j30ActionPerformed(evt);
-                }
-            });
-            CppContent.add(j30);
-            j30.setBounds(0, 430, 700, 37);
+        j34.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j34.setText("1. Overview ");
+        j34.setContentAreaFilled(false);
+        j34.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j34ActionPerformed(evt);
+            }
+        });
+        CContent.add(j34);
+        j34.setBounds(0, 150, 250, 37);
 
-            j31.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j31.setText("9. Data Types, Arrays and Strings");
-            j31.setContentAreaFilled(false);
-            j31.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j31.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j31ActionPerformed(evt);
-                }
-            });
-            CppContent.add(j31);
-            j31.setBounds(0, 470, 560, 37);
+        j35.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j35.setText("2. Hello world Program");
+        j35.setContentAreaFilled(false);
+        j35.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j35ActionPerformed(evt);
+            }
+        });
+        CContent.add(j35);
+        j35.setBounds(0, 190, 290, 37);
 
-            j32.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j32.setText("10. Pointers");
-            j32.setContentAreaFilled(false);
-            j32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j32.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j32ActionPerformed(evt);
-                }
-            });
-            CppContent.add(j32);
-            j32.setBounds(-10, 510, 380, 37);
+        j36.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j36.setText("3. Data Types");
+        j36.setContentAreaFilled(false);
+        j36.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j36ActionPerformed(evt);
+            }
+        });
+        CContent.add(j36);
+        j36.setBounds(0, 230, 250, 37);
 
-            jTabbedPane1.addTab("java1", CppContent);
+        j37.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j37.setText("4. Operators");
+        j37.setContentAreaFilled(false);
+        j37.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j37ActionPerformed(evt);
+            }
+        });
+        CContent.add(j37);
+        j37.setBounds(0, 270, 250, 37);
 
-            CContent.setBackground(new java.awt.Color(240, 152, 143));
-            CContent.setLayout(null);
+        j38.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j38.setText("5. Statements and Flow Control");
+        j38.setContentAreaFilled(false);
+        j38.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j38ActionPerformed(evt);
+            }
+        });
+        CContent.add(j38);
+        j38.setBounds(0, 310, 380, 37);
 
-            jLabel18.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-            jLabel18.setText("Contents");
-            CContent.add(jLabel18);
-            jLabel18.setBounds(490, 0, 150, 40);
+        j39.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j39.setText("6. Procedure Oriented Programming");
+        j39.setContentAreaFilled(false);
+        j39.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j39ActionPerformed(evt);
+            }
+        });
+        CContent.add(j39);
+        j39.setBounds(0, 350, 440, 37);
 
-            GetStarted3.setBackground(new java.awt.Color(51, 255, 51));
-            GetStarted3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-            GetStarted3.setText("Get Started");
-            GetStarted3.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    GetStarted3ActionPerformed(evt);
-                }
-            });
-            CContent.add(GetStarted3);
-            GetStarted3.setBounds(1090, 530, 130, 60);
+        j40.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j40.setText("7. Packaging");
+        j40.setContentAreaFilled(false);
+        j40.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j40ActionPerformed(evt);
+            }
+        });
+        CContent.add(j40);
+        j40.setBounds(0, 390, 380, 37);
 
-            j34.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j34.setText("1. Overview ");
-            j34.setContentAreaFilled(false);
-            j34.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j34.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j34ActionPerformed(evt);
-                }
-            });
-            CContent.add(j34);
-            j34.setBounds(0, 150, 250, 37);
+        j41.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j41.setText("8. Preprocessor");
+        j41.setContentAreaFilled(false);
+        j41.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j41.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j41ActionPerformed(evt);
+            }
+        });
+        CContent.add(j41);
+        j41.setBounds(0, 430, 380, 37);
 
-            j35.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j35.setText("2. Hello world Program");
-            j35.setContentAreaFilled(false);
-            j35.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j35.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j35ActionPerformed(evt);
-                }
-            });
-            CContent.add(j35);
-            j35.setBounds(0, 190, 290, 37);
+        j42.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j42.setText("9. Exceptions");
+        j42.setContentAreaFilled(false);
+        j42.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j42.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j42ActionPerformed(evt);
+            }
+        });
+        CContent.add(j42);
+        j42.setBounds(0, 470, 380, 37);
 
-            j36.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j36.setText("3. Data Types");
-            j36.setContentAreaFilled(false);
-            j36.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j36.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j36ActionPerformed(evt);
-                }
-            });
-            CContent.add(j36);
-            j36.setBounds(0, 230, 250, 37);
+        j43.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j43.setText("10. Input Output");
+        j43.setContentAreaFilled(false);
+        j43.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j43.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j43ActionPerformed(evt);
+            }
+        });
+        CContent.add(j43);
+        j43.setBounds(-10, 510, 380, 37);
 
-            j37.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j37.setText("4. Operators");
-            j37.setContentAreaFilled(false);
-            j37.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j37.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j37ActionPerformed(evt);
-                }
-            });
-            CContent.add(j37);
-            j37.setBounds(0, 270, 250, 37);
+        j44.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        j44.setText("11. Threading");
+        j44.setContentAreaFilled(false);
+        j44.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        j44.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j44ActionPerformed(evt);
+            }
+        });
+        CContent.add(j44);
+        j44.setBounds(-10, 550, 380, 37);
 
-            j38.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j38.setText("5. Statements and Flow Control");
-            j38.setContentAreaFilled(false);
-            j38.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j38.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j38ActionPerformed(evt);
-                }
-            });
-            CContent.add(j38);
-            j38.setBounds(0, 310, 380, 37);
+        jTabbedPane1.addTab("java1", CContent);
 
-            j39.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j39.setText("6. Procedure Oriented Programming");
-            j39.setContentAreaFilled(false);
-            j39.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j39.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j39ActionPerformed(evt);
-                }
-            });
-            CContent.add(j39);
-            j39.setBounds(0, 350, 440, 37);
+        jPanel1.add(jTabbedPane1);
+        jTabbedPane1.setBounds(0, 0, 1230, 660);
 
-            j40.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j40.setText("7. Packaging");
-            j40.setContentAreaFilled(false);
-            j40.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j40.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j40ActionPerformed(evt);
-                }
-            });
-            CContent.add(j40);
-            j40.setBounds(0, 390, 380, 37);
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(140, 100, 1230, 630);
 
-            j41.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j41.setText("8. Preprocessor");
-            j41.setContentAreaFilled(false);
-            j41.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j41.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j41ActionPerformed(evt);
-                }
-            });
-            CContent.add(j41);
-            j41.setBounds(0, 430, 380, 37);
+        jPanel2.setBackground(new java.awt.Color(223, 106, 106));
+        jPanel2.setLayout(null);
 
-            j42.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j42.setText("9. Exceptions");
-            j42.setContentAreaFilled(false);
-            j42.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j42.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j42ActionPerformed(evt);
-                }
-            });
-            CContent.add(j42);
-            j42.setBounds(0, 470, 380, 37);
+        jLabel3.setFont(new java.awt.Font("Lucida Handwriting", 0, 50)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(12, 175, 175));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Programming");
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(150, 10, 820, 80);
 
-            j43.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j43.setText("10. Input Output");
-            j43.setContentAreaFilled(false);
-            j43.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j43.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j43ActionPerformed(evt);
-                }
-            });
-            CContent.add(j43);
-            j43.setBounds(-10, 510, 380, 37);
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(140, 0, 1230, 100);
 
-            j44.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-            j44.setText("11. Threading");
-            j44.setContentAreaFilled(false);
-            j44.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            j44.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    j44ActionPerformed(evt);
-                }
-            });
-            CContent.add(j44);
-            j44.setBounds(-10, 550, 380, 37);
-
-            jTabbedPane1.addTab("java1", CContent);
-
-            jPanel1.add(jTabbedPane1);
-            jTabbedPane1.setBounds(0, 0, 1230, 660);
-
-            getContentPane().add(jPanel1);
-            jPanel1.setBounds(140, 100, 1230, 630);
-
-            jPanel2.setBackground(new java.awt.Color(223, 106, 106));
-            jPanel2.setLayout(null);
-
-            jLabel3.setFont(new java.awt.Font("Lucida Handwriting", 0, 50)); // NOI18N
-            jLabel3.setForeground(new java.awt.Color(12, 175, 175));
-            jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            jLabel3.setText("Programming");
-            jPanel2.add(jLabel3);
-            jLabel3.setBounds(150, 10, 820, 80);
-
-            getContentPane().add(jPanel2);
-            jPanel2.setBounds(140, 0, 1230, 100);
-
-            pack();
-        }// </editor-fold>//GEN-END:initComponents
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
 
     private void HomeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeButtonActionPerformed
         jTabbedPane1.setSelectedIndex(0);  
@@ -1092,9 +1280,13 @@ public class Learning_app extends javax.swing.JFrame {
     }//GEN-LAST:event_PythonActionPerformed
 
     private void j1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_j1ActionPerformed
-
+       jScrollPane2.setBackground(new java.awt.Color(223, 133, 133));
+       jTextPane1.setBackground(new java.awt.Color(223, 133, 133));
+        jTextPane1.setBackground(new java.awt.Color(223, 133, 133));
         jTextPane1.setText("Java programming language was originally developed by Sun Microsystems which was initiated by James Gosling and released in 1995 as core component of Sun Microsystems' Java platform (Java 1.0 [J2SE]).\n\nThe latest release of the Java Standard Edition is Java SE 8. With the advancement of Java and its widespread popularity, multiple configurations were built to suit various types of platforms. For example: J2EE for Enterprise Applications, J2ME for Mobile Applications.\n\nThe new J2 versions were renamed as Java SE, Java EE, and Java ME respectively. Java is guaranteed to be Write Once, Run Anywhere.\n\nJava is −\n\nObject Oriented − In Java, everything is an Object. Java can be easily extended since it is based on the Object model.\n\nPlatform Independent − Unlike many other programming languages including C and C++, when Java is compiled, it is not compiled into platform specific machine, rather into platform independent byte code. This byte code is distributed over the web and interpreted by the Virtual Machine (JVM) on whichever platform it is being run on.\n\nSimple − Java is designed to be easy to learn. If you understand the basic concept of OOP Java, it would be easy to master.\n\nSecure − With Java's secure feature it enables to develop virus-free, tamper-free systems. Authentication techniques are based on public-key encryption.\n\nArchitecture-neutral − Java compiler generates an architecture-neutral object file format, which makes the compiled code executable on many processors, with the presence of Java runtime system.\n\nPortable − Being architecture-neutral and having no implementation dependent aspects of the specification makes Java portable. Compiler in Java is written in ANSI C with a clean portability boundary, which is a POSIX subset.\n\nRobust − Java makes an effort to eliminate error prone situations by emphasizing mainly on compile time error checking and runtime checking.\n\nMultithreaded − With Java's multithreaded feature it is possible to write programs that can perform many tasks simultaneously. This design feature allows the developers to construct interactive applications that can run smoothly.\n\nInterpreted − Java byte code is translated on the fly to native machine instructions and is not stored anywhere. The development process is more rapid and analytical since the linking is an incremental and light-weight process.\n\nHigh Performance − With the use of Just-In-Time compilers, Java enables high performance.\n\nDistributed − Java is designed for the distributed environment of the internet.\n\nDynamic − Java is considered to be more dynamic than C or C++ since it is designed to adapt to an evolving environment. Java programs can carry extensive amount of run-time information that can be used to verify and resolve \naccesses to objects on run-time.\n\n\n\nHistory of Java\n\nJames Gosling initiated Java language project in June 1991 for use in one of his many set-top box projects. The language, initially called ‘Oak’ after an oak tree that stood outside Gosling's office, also went by the name ‘Green’ and ended up later being renamed as Java, from a list of random words.\n\nSun released the first public implementation as Java 1.0 in 1995. It promised Write Once, Run Anywhere (WORA), providing no-cost run-times on popular platforms.\n\nOn 13 November, 2006, Sun released much of Java as free and open source software under the terms of the GNU General Public License (GPL).\n\nOn 8 May, 2007, Sun finished the process, making all of Java's core code free and open-source, aside from a small portion of code to which Sun did not hold the copyright.\n\nTools You Will Need\nFor performing the examples discussed in this tutorial, you will need a Pentium 200-MHz computer with a minimum of 64 MB of RAM (128 MB of RAM recommended).\n\nYou will also need the following softwares −\n\nLinux 7.1 or Windows xp/7/8 operating system\nJava JDK 8\nMicrosoft Notepad or any other text editor\nThis tutorial will provide the necessary skills to create GUI, networking, and web applications using Java.");
         setContent("                                    1.Overview of Java\n\n");
+        jScrollPane2.setBackground(new java.awt.Color(223, 133, 133));
+        jTextPane1.setBackground(new java.awt.Color(223, 133, 133));
         jTabbedPane1.setSelectedIndex(2); 
         // TODO add your handling code here:
     }//GEN-LAST:event_j1ActionPerformed
@@ -1385,37 +1577,108 @@ public class Learning_app extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void JavaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JavaMouseMoved
+jTextArea2.setText("Java is top pick as one of the most popular\n programming languages, used for building\n server-side applications to video games\n and mobile app");
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_JavaMouseMoved
+
+    private void JavaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JavaMouseExited
+    jTextArea2.setText("");    // TODO add your handling code here:
+    }//GEN-LAST:event_JavaMouseExited
+
+    private void PythonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PythonMouseMoved
+    jTextArea3.setText("Python is one of the most beginner-friendly\n programming languages you will find.\n It’s perfect for learning the fundamentals of\n programming if you’re just starting out with coding.");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PythonMouseMoved
+
+    private void PythonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PythonMouseExited
+        jTextArea3.setText(""); // TODO add your handling code here:
+    }//GEN-LAST:event_PythonMouseExited
+
+    private void Cpp1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cpp1MouseMoved
+        jTextArea4.setText("C++ is based on C, the indisputable dinosaur of programming\nlanguages still in use.C++ a powerful, high-performance\nlanguage, but it’s rather lower-level. Low-level programming\nlanguages use a lower degree of abstraction, meaning that\nthe code is more difficult to “read”.");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Cpp1MouseMoved
+
+    private void Cpp1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cpp1MouseExited
+          jTextArea4.setText(""); // TODO add your handling code here: // TODO add your handling code here:
+    }//GEN-LAST:event_Cpp1MouseExited
+
+    private void C3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C3MouseMoved
+        jTextArea5.setText("Originally developed by Microsoft to run on their .NET framework,\nC# (pronounced C-sharp) is based on C and C++. \nC# was originally designed to be easy to learn and use.\nObviously that makes it a simple language to start with.");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_C3MouseMoved
+
+    private void C3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C3MouseExited
+        jTextArea5.setText("");// TODO add your handling code here:
+    }//GEN-LAST:event_C3MouseExited
+
+    private void HomeButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeButtonMouseMoved
+        jLabel1.setText("Home");        // TODO add your handling code here:
+    }//GEN-LAST:event_HomeButtonMouseMoved
+
+    private void HomeButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeButtonMouseExited
+        jLabel1.setText("");        // TODO add your handling code here:
+    }//GEN-LAST:event_HomeButtonMouseExited
+
+    private void Java1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Java1MouseMoved
+       jLabel2.setText("Java");        // TODO add your handling code here:
+               
+    }//GEN-LAST:event_Java1MouseMoved
+
+    private void Java1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Java1MouseExited
+       jLabel2.setText("");     // TODO add your handling code here:
+    }//GEN-LAST:event_Java1MouseExited
+
+    private void CMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CMouseMoved
+       jLabel8.setText("C");        // TODO add your handling code here:
+    }//GEN-LAST:event_CMouseMoved
+
+    private void CMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CMouseExited
+       jLabel8.setText("");        // TODO add your handling code here:
+    }//GEN-LAST:event_CMouseExited
+
+    private void Python1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Python1MouseMoved
+       jLabel15.setText("Python");        // TODO add your handling code here:
+    }//GEN-LAST:event_Python1MouseMoved
+
+    private void Python1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Python1MouseExited
+       jLabel15.setText("");        // TODO add your handling code here:
+    }//GEN-LAST:event_Python1MouseExited
+
+    private void CppMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CppMouseMoved
+       jLabel17.setText("C++");        // TODO add your handling code here:
+    }//GEN-LAST:event_CppMouseMoved
+
+    private void CppMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CppMouseExited
+       jLabel17.setText("");        // TODO add your handling code here:
+    }//GEN-LAST:event_CppMouseExited
+
+    private void jButton2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseMoved
+      jLabel19.setText("Exit");        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2MouseMoved
+
+    private void jButton2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseExited
+      jLabel19.setText("");        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2MouseExited
+
     public void setContent(String heading)
     {
-        jScrollPane2.setAutoscrolls(true);
-        jScrollPane2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jScrollPane2.setOpaque(false);
-
-        jTextPane1.setEditable(false);
-        jTextPane1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        
-        jTextPane1.setAutoscrolls(false);
-        jTextPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jTextPane1.setName(""); // NOI18N
-        jTextPane1.setOpaque(false);
-        jTextPane1.setRequestFocusEnabled(false);
-        jScrollPane2.setViewportView(jTextPane1);
         try{
             StyledDocument doc=jTextPane1.getStyledDocument();
             StyledDocument doc1=jTextPane1.getStyledDocument();
-
             SimpleAttributeSet text=new SimpleAttributeSet();
-            SimpleAttributeSet text1=new SimpleAttributeSet();
-            StyleConstants.setFontSize(text1, 15);
             StyleConstants.setBold(text, true);
             StyleConstants.setFontSize(text, 36);
-
             doc.insertString(0, heading, text);
         }catch(BadLocationException e){
-
+            System.out.println("Exception : "+e.getMessage());
         }
-
     }
+   
+
+    
     /**
      * @param args the command line arguments
      */
@@ -1524,19 +1787,32 @@ public class Learning_app extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea jTextArea5;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

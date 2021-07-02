@@ -7,11 +7,14 @@
 package Package2;
 
 
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -25,6 +28,7 @@ public class Login_Signup extends javax.swing.JFrame {
      */
     public Login_Signup() {
         initComponents();
+       
     }
 
     /**
@@ -37,18 +41,18 @@ public class Login_Signup extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
+        LoginPage = new javax.swing.JPanel();
         Username = new javax.swing.JLabel();
         Password = new javax.swing.JLabel();
-        PasswordField = new javax.swing.JTextField();
         UsernameField = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         LoginButton = new javax.swing.JButton();
         SignUpButton = new javax.swing.JButton();
         LoginMessageLabel = new javax.swing.JLabel();
         loginExitButton = new javax.swing.JButton();
+        PasswordField = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        SignUpPage = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         FirstName = new javax.swing.JLabel();
         LastName = new javax.swing.JLabel();
@@ -65,179 +69,326 @@ public class Login_Signup extends javax.swing.JFrame {
         SignupButton = new javax.swing.JButton();
         LoginPageButton = new javax.swing.JButton();
         loginExitButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LearningApp");
         setBounds(new java.awt.Rectangle(450, 180, 0, 0));
-        setMaximumSize(new java.awt.Dimension(590, 380));
         setMinimumSize(new java.awt.Dimension(590, 380));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(590, 380));
         setResizable(false);
         getContentPane().setLayout(null);
 
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.RIGHT);
 
-        jPanel2.setLayout(null);
+        LoginPage.setLayout(null);
 
         Username.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Username.setForeground(new java.awt.Color(255, 255, 255));
         Username.setText("Username");
-        jPanel2.add(Username);
+        LoginPage.add(Username);
         Username.setBounds(143, 110, 96, 40);
 
         Password.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Password.setForeground(new java.awt.Color(255, 255, 255));
         Password.setText("Password");
-        jPanel2.add(Password);
+        LoginPage.add(Password);
         Password.setBounds(147, 180, 92, 36);
+
+        UsernameField.setBackground(new java.awt.Color(237, 237, 237));
+        UsernameField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        UsernameField.setForeground(new java.awt.Color(153, 153, 153));
+        UsernameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        UsernameField.setText("Enter Username");
+        UsernameField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UsernameFieldMouseClicked(evt);
+            }
+        });
+        UsernameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsernameFieldActionPerformed(evt);
+            }
+        });
+        LoginPage.add(UsernameField);
+        UsernameField.setBounds(270, 118, 190, 30);
+
+        jLabel6.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Login");
+        LoginPage.add(jLabel6);
+        jLabel6.setBounds(270, 0, 100, 30);
+
+        LoginButton.setBackground(new java.awt.Color(255, 255, 255));
+        LoginButton.setFont(new java.awt.Font("Algerian", 1, 18)); // NOI18N
+        LoginButton.setText("Login");
+        LoginButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        LoginButton.setBorderPainted(false);
+        LoginButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                LoginButtonMouseMoved(evt);
+            }
+        });
+        LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LoginButtonMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LoginButtonMouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                LoginButtonMouseReleased(evt);
+            }
+        });
+        LoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginButtonActionPerformed(evt);
+            }
+        });
+        LoginPage.add(LoginButton);
+        LoginButton.setBounds(40, 280, 530, 30);
+
+        SignUpButton.setBackground(new java.awt.Color(255, 255, 255));
+        SignUpButton.setFont(new java.awt.Font("Algerian", 1, 18)); // NOI18N
+        SignUpButton.setText("SignUp");
+        SignUpButton.setBorderPainted(false);
+        SignUpButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                SignUpButtonMouseMoved(evt);
+            }
+        });
+        SignUpButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SignUpButtonMouseExited(evt);
+            }
+        });
+        SignUpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SignUpButtonActionPerformed(evt);
+            }
+        });
+        LoginPage.add(SignUpButton);
+        SignUpButton.setBounds(260, 330, 110, 30);
+
+        LoginMessageLabel.setForeground(new java.awt.Color(255, 0, 51));
+        LoginPage.add(LoginMessageLabel);
+        LoginMessageLabel.setBounds(50, 70, 513, 36);
+
+        loginExitButton.setBackground(new java.awt.Color(255, 132, 132));
+        loginExitButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        loginExitButton.setForeground(new java.awt.Color(255, 255, 255));
+        loginExitButton.setText("X");
+        loginExitButton.setBorderPainted(false);
+        loginExitButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                loginExitButtonMouseMoved(evt);
+            }
+        });
+        loginExitButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                loginExitButtonMouseExited(evt);
+            }
+        });
+        loginExitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginExitButtonActionPerformed(evt);
+            }
+        });
+        LoginPage.add(loginExitButton);
+        loginExitButton.setBounds(550, 0, 40, 20);
 
         PasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordFieldActionPerformed(evt);
             }
         });
-        jPanel2.add(PasswordField);
-        PasswordField.setBounds(270, 188, 190, 30);
+        LoginPage.add(PasswordField);
+        PasswordField.setBounds(270, 190, 190, 30);
 
-        UsernameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsernameFieldActionPerformed(evt);
-            }
-        });
-        jPanel2.add(UsernameField);
-        UsernameField.setBounds(270, 118, 190, 30);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Screenshot_2.png"))); // NOI18N
+        LoginPage.add(jLabel1);
+        jLabel1.setBounds(-10, 0, 620, 380);
 
-        jLabel6.setFont(new java.awt.Font("Algerian", 0, 24)); // NOI18N
-        jLabel6.setText("Login");
-        jPanel2.add(jLabel6);
-        jLabel6.setBounds(258, 0, 100, 30);
+        jTabbedPane1.addTab("tab1", LoginPage);
 
-        LoginButton.setFont(new java.awt.Font("Algerian", 0, 18)); // NOI18N
-        LoginButton.setText("Login");
-        LoginButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginButtonActionPerformed(evt);
-            }
-        });
-        jPanel2.add(LoginButton);
-        LoginButton.setBounds(241, 271, 110, 30);
-
-        SignUpButton.setFont(new java.awt.Font("Algerian", 0, 18)); // NOI18N
-        SignUpButton.setText("SignUp");
-        SignUpButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SignUpButtonActionPerformed(evt);
-            }
-        });
-        jPanel2.add(SignUpButton);
-        SignUpButton.setBounds(241, 329, 110, 30);
-
-        LoginMessageLabel.setForeground(new java.awt.Color(255, 0, 51));
-        jPanel2.add(LoginMessageLabel);
-        LoginMessageLabel.setBounds(60, 70, 513, 36);
-
-        loginExitButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        loginExitButton.setText("X");
-        loginExitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginExitButtonActionPerformed(evt);
-            }
-        });
-        jPanel2.add(loginExitButton);
-        loginExitButton.setBounds(550, 0, 40, 20);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Desert.jpg"))); // NOI18N
-        jPanel2.add(jLabel1);
-        jLabel1.setBounds(-6, 4, 600, 390);
-
-        jTabbedPane1.addTab("tab1", jPanel2);
-
-        jPanel3.setLayout(null);
+        SignUpPage.setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Algerian", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Signup");
-        jPanel3.add(jLabel2);
+        SignUpPage.add(jLabel2);
         jLabel2.setBounds(283, 0, 128, 44);
 
-        FirstName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        FirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        FirstName.setForeground(new java.awt.Color(255, 255, 255));
         FirstName.setText("First Name");
-        jPanel3.add(FirstName);
+        SignUpPage.add(FirstName);
         FirstName.setBounds(28, 88, 80, 30);
 
-        LastName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        LastName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        LastName.setForeground(new java.awt.Color(255, 255, 255));
         LastName.setText("Last Name");
-        jPanel3.add(LastName);
+        SignUpPage.add(LastName);
         LastName.setBounds(330, 100, 94, 15);
 
-        Username1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        Username1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Username1.setForeground(new java.awt.Color(255, 255, 255));
         Username1.setText("Username");
-        jPanel3.add(Username1);
+        SignUpPage.add(Username1);
         Username1.setBounds(28, 264, 76, 30);
 
-        ContactNo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        ContactNo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ContactNo.setForeground(new java.awt.Color(255, 255, 255));
         ContactNo.setText("Contact No.");
-        jPanel3.add(ContactNo);
+        SignUpPage.add(ContactNo);
         ContactNo.setBounds(28, 175, 86, 30);
 
-        DOB.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        DOB.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        DOB.setForeground(new java.awt.Color(255, 255, 255));
         DOB.setText("DOB");
-        jPanel3.add(DOB);
-        DOB.setBounds(330, 170, 94, 22);
+        SignUpPage.add(DOB);
+        DOB.setBounds(330, 170, 60, 22);
 
-        Password1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        Password1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Password1.setForeground(new java.awt.Color(255, 255, 255));
         Password1.setText("Password");
-        jPanel3.add(Password1);
+        SignUpPage.add(Password1);
         Password1.setBounds(320, 260, 94, 30);
-        jPanel3.add(FirstNameField);
+
+        FirstNameField.setBackground(new java.awt.Color(229, 229, 229));
+        FirstNameField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FirstNameFieldMouseClicked(evt);
+            }
+        });
+        SignUpPage.add(FirstNameField);
         FirstNameField.setBounds(110, 90, 145, 28);
-        jPanel3.add(ContactNoField);
+
+        ContactNoField.setBackground(new java.awt.Color(229, 229, 229));
+        ContactNoField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ContactNoFieldMouseClicked(evt);
+            }
+        });
+        SignUpPage.add(ContactNoField);
         ContactNoField.setBounds(110, 180, 147, 30);
-        jPanel3.add(Username1Field);
+
+        Username1Field.setBackground(new java.awt.Color(229, 229, 229));
+        Username1Field.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Username1FieldMouseClicked(evt);
+            }
+        });
+        SignUpPage.add(Username1Field);
         Username1Field.setBounds(110, 270, 147, 30);
-        jPanel3.add(LastNameField);
+
+        LastNameField.setBackground(new java.awt.Color(229, 229, 229));
+        LastNameField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LastNameFieldMouseClicked(evt);
+            }
+        });
+        SignUpPage.add(LastNameField);
         LastNameField.setBounds(410, 90, 170, 30);
-        jPanel3.add(Password1Field);
+
+        Password1Field.setBackground(new java.awt.Color(229, 229, 229));
+        Password1Field.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Password1FieldMouseClicked(evt);
+            }
+        });
+        SignUpPage.add(Password1Field);
         Password1Field.setBounds(410, 260, 170, 30);
-        jPanel3.add(DOBField);
+
+        DOBField.setCalendarBackground(new java.awt.Color(224, 224, 224));
+        DOBField.addCursorMoveListener(new datechooser.events.CursorMoveListener() {
+            public void onCursorMove(datechooser.events.CursorMoveEvent evt) {
+                DOBFieldOnCursorMove(evt);
+            }
+        });
+        SignUpPage.add(DOBField);
         DOBField.setBounds(410, 170, 155, 30);
 
+        SignupButton.setBackground(new java.awt.Color(255, 255, 255));
         SignupButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         SignupButton.setText("SignUp");
+        SignupButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                SignupButtonMouseMoved(evt);
+            }
+        });
+        SignupButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SignupButtonMouseExited(evt);
+            }
+        });
         SignupButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SignupButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(SignupButton);
-        SignupButton.setBounds(320, 320, 141, 31);
+        SignUpPage.add(SignupButton);
+        SignupButton.setBounds(280, 320, 90, 30);
 
         LoginPageButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        LoginPageButton.setForeground(new java.awt.Color(255, 255, 255));
         LoginPageButton.setText("Login Page");
+        LoginPageButton.setContentAreaFilled(false);
+        LoginPageButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        LoginPageButton.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        LoginPageButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                LoginPageButtonMouseMoved(evt);
+            }
+        });
+        LoginPageButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LoginPageButtonMouseExited(evt);
+            }
+        });
         LoginPageButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginPageButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(LoginPageButton);
-        LoginPageButton.setBounds(140, 320, 141, 30);
+        SignUpPage.add(LoginPageButton);
+        LoginPageButton.setBounds(290, 360, 100, 20);
 
+        loginExitButton1.setBackground(new java.awt.Color(255, 132, 132));
         loginExitButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         loginExitButton1.setText("X");
+        loginExitButton1.setContentAreaFilled(false);
+        loginExitButton1.setOpaque(true);
+        loginExitButton1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                loginExitButton1MouseMoved(evt);
+            }
+        });
+        loginExitButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                loginExitButton1MouseExited(evt);
+            }
+        });
         loginExitButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginExitButton1ActionPerformed(evt);
             }
         });
-        jPanel3.add(loginExitButton1);
+        SignUpPage.add(loginExitButton1);
         loginExitButton1.setBounds(550, 0, 40, 20);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images.jpeg"))); // NOI18N
-        jPanel3.add(jLabel3);
-        jLabel3.setBounds(-6, -6, 600, 390);
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("or back to ");
+        SignUpPage.add(jLabel4);
+        jLabel4.setBounds(240, 360, 60, 20);
 
-        jTabbedPane1.addTab("tab2", jPanel3);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Screenshot_2.png"))); // NOI18N
+        SignUpPage.add(jLabel3);
+        jLabel3.setBounds(0, -10, 600, 390);
+
+        jTabbedPane1.addTab("tab2", SignUpPage);
 
         getContentPane().add(jTabbedPane1);
         jTabbedPane1.setBounds(0, 0, 640, 390);
@@ -247,11 +398,10 @@ public class Login_Signup extends javax.swing.JFrame {
 
     private void SignupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignupButtonActionPerformed
               // TODO add your handling code here:
-          String Username=Username1Field.getText();
+        String Username=Username1Field.getText();
         String Password=Password1Field.getText();  
         String FirstName=FirstNameField.getText(); 
         String LastName=LastNameField.getText(); 
-        
         String MobileNo=ContactNoField.getText();
         try{
         Class.forName("com.mysql.jdbc.Driver");
@@ -263,12 +413,12 @@ public class Login_Signup extends javax.swing.JFrame {
         if(rs.next())
         {
             JOptionPane.showMessageDialog(this,"!!Name Already Taken!!");
-            
         }
         else{
         PreparedStatement Create=con.prepareStatement("Insert into login (FirstName,LastName,Mobile,DOB,Username,Password) values ('"+FirstName+"','"+LastName+"','"+MobileNo+"','"+DOB.getText()+"','"+Username+"','"+Password+"')");
         Create.executeUpdate();
         System.out.println("value inserted");
+        JOptionPane.showMessageDialog(this,"Sign in Successfully");
         JOptionPane.showMessageDialog(this,"Sign in Successfully");
         }
                 }catch(Exception e)
@@ -281,44 +431,34 @@ public class Login_Signup extends javax.swing.JFrame {
         jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_LoginPageButtonActionPerformed
 
-    private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PasswordFieldActionPerformed
-
     private void UsernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UsernameFieldActionPerformed
 
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
+
+        Loading lp=new Loading();            
         String Username=UsernameField.getText();
         String Password=PasswordField.getText();
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            System.out.println("Driver Loaded");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/learning_app", "root", "Bhaisachin12@");
-            System.out.println("Connection Established");
-            PreparedStatement Create=con.prepareStatement("select Username,Password from Login where Username='"+Username+"'and Password='"+Password+"'");
+            PreparedStatement Create=this.connection().prepareStatement("select Username,Password from Login where Username='"+Username+"'and Password='"+Password+"'");
             ResultSet rs=Create.executeQuery();
             if(rs.next())
-            {
-                System.out.println("found loggin");
-               
-                Learning_app la=new Learning_app();
-                la.setVisible(true);
-                this.setVisible(false);
+            {      
+                   System.out.println("found Login");
+                   Learning_app la=new Learning_app();
+                   this.setVisible(false);
+                   la.setVisible(true);
             }
             else
             {
                 LoginMessageLabel.setText("Incorrect Username or Password");
-                LoginMessageLabel.setVisible(true);
+                LoginMessageLabel.setVisible(true); 
             }
         }catch(SQLException e)
         {
             System.out.println("SQL exception"+e.getMessage());
-        } catch (ClassNotFoundException ex) {
-            System.out.println("class not found exception"+ex.getMessage());
-        }             // TODO add your handling code here:
-
+        }        
     }//GEN-LAST:event_LoginButtonActionPerformed
 
     private void SignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButtonActionPerformed
@@ -335,6 +475,116 @@ public class Login_Signup extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_loginExitButton1ActionPerformed
 
+    private void PasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PasswordFieldActionPerformed
+
+    private void UsernameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UsernameFieldMouseClicked
+     UsernameField.setBackground(Color.WHITE);        // TODO add your handling code here:
+     UsernameField.setForeground(Color.BLACK);        // TODO add your handling code here:
+     UsernameField.setText("");        // TODO add your handling code here:
+    }//GEN-LAST:event_UsernameFieldMouseClicked
+
+    private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseClicked
+          
+    }//GEN-LAST:event_LoginButtonMouseClicked
+
+    private void LoginButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseReleased
+      // TODO add your handling code here:
+    }//GEN-LAST:event_LoginButtonMouseReleased
+
+    private void LoginButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseExited
+LoginButton.setBackground(Color.white);        // TODO add your handling code here:
+    }//GEN-LAST:event_LoginButtonMouseExited
+
+    private void loginExitButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginExitButtonMouseMoved
+         loginExitButton.setBackground(new java.awt.Color(255, 0, 0));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginExitButtonMouseMoved
+
+    private void loginExitButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginExitButtonMouseExited
+      loginExitButton.setBackground(new java.awt.Color(255, 132, 132));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginExitButtonMouseExited
+
+    private void LoginButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseMoved
+          LoginButton.setBackground(Color.cyan);// TODO add your handling code here:
+    }//GEN-LAST:event_LoginButtonMouseMoved
+
+    private void SignUpButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUpButtonMouseMoved
+        SignUpButton.setBackground(Color.cyan);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SignUpButtonMouseMoved
+
+    private void SignUpButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUpButtonMouseExited
+                   SignUpButton.setBackground(Color.white);
+    // TODO add your handling code here:
+    }//GEN-LAST:event_SignUpButtonMouseExited
+
+    private void loginExitButton1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginExitButton1MouseMoved
+      loginExitButton1.setBackground(new java.awt.Color(255, 0, 0));  // TODO add your handling code here:
+    }//GEN-LAST:event_loginExitButton1MouseMoved
+
+    private void loginExitButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginExitButton1MouseExited
+               loginExitButton1.setBackground(new java.awt.Color(255, 132, 132));  // TODO add your handling code here:
+  // TODO add your handling code here:
+    }//GEN-LAST:event_loginExitButton1MouseExited
+
+    private void FirstNameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FirstNameFieldMouseClicked
+       FirstNameField.setBackground(new java.awt.Color(255, 255, 255)); // TODO add your handling code here:
+    }//GEN-LAST:event_FirstNameFieldMouseClicked
+
+    private void LastNameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LastNameFieldMouseClicked
+       LastNameField.setBackground(new java.awt.Color(255, 255, 255));        // TODO add your handling code here:
+    }//GEN-LAST:event_LastNameFieldMouseClicked
+
+    private void ContactNoFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ContactNoFieldMouseClicked
+       ContactNoField.setBackground(new java.awt.Color(255, 255, 255));        // TODO add your handling code here:
+    }//GEN-LAST:event_ContactNoFieldMouseClicked
+
+    private void Username1FieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Username1FieldMouseClicked
+        Username1Field.setBackground(new java.awt.Color(255, 255, 255));      // TODO add your handling code here:
+    }//GEN-LAST:event_Username1FieldMouseClicked
+
+    private void Password1FieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Password1FieldMouseClicked
+        Password1Field.setBackground(new java.awt.Color(255, 255, 255));        
+    }//GEN-LAST:event_Password1FieldMouseClicked
+
+    private void DOBFieldOnCursorMove(datechooser.events.CursorMoveEvent evt) {//GEN-FIRST:event_DOBFieldOnCursorMove
+        DOBField.setBackground(Color.white);        // TODO add your handling code here:
+    }//GEN-LAST:event_DOBFieldOnCursorMove
+
+    private void LoginPageButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginPageButtonMouseMoved
+         LoginPageButton.setForeground(Color.BLUE);        // TODO add your handling code here:
+    }//GEN-LAST:event_LoginPageButtonMouseMoved
+
+    private void LoginPageButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginPageButtonMouseExited
+         LoginPageButton.setForeground(Color.WHITE);        // TODO add your handling code here:
+    }//GEN-LAST:event_LoginPageButtonMouseExited
+
+    private void SignupButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignupButtonMouseMoved
+         SignupButton.setBackground(Color.cyan);        // TODO add your handling code here:
+    }//GEN-LAST:event_SignupButtonMouseMoved
+
+    private void SignupButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignupButtonMouseExited
+          SignupButton.setBackground(Color.WHITE);        // TODO add your handling code here:
+    }//GEN-LAST:event_SignupButtonMouseExited
+    public Connection connection()
+    {
+        
+        Connection con=null;
+        try{
+             Class.forName("com.mysql.jdbc.Driver");
+            System.out.println("Driver Loaded");
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/learning_app", "root", "Bhaisachin12@");
+            System.out.println("Connection Established");
+          } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Login_Signup.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Login_Signup.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return con;
+    }
     /**
      * @param args the command line arguments
      */
@@ -381,12 +631,14 @@ public class Login_Signup extends javax.swing.JFrame {
     private javax.swing.JTextField LastNameField;
     private javax.swing.JButton LoginButton;
     private javax.swing.JLabel LoginMessageLabel;
+    private javax.swing.JPanel LoginPage;
     private javax.swing.JButton LoginPageButton;
     private javax.swing.JLabel Password;
     private javax.swing.JLabel Password1;
     private javax.swing.JTextField Password1Field;
-    private javax.swing.JTextField PasswordField;
+    private javax.swing.JPasswordField PasswordField;
     private javax.swing.JButton SignUpButton;
+    private javax.swing.JPanel SignUpPage;
     private javax.swing.JButton SignupButton;
     private javax.swing.JLabel Username;
     private javax.swing.JLabel Username1;
@@ -395,9 +647,8 @@ public class Login_Signup extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton loginExitButton;
     private javax.swing.JButton loginExitButton1;
