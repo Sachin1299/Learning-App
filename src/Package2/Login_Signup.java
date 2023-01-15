@@ -406,7 +406,7 @@ public class Login_Signup extends javax.swing.JFrame {
         try{
         Class.forName("com.mysql.jdbc.Driver");
         System.out.println("Driver Loaded");
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/learning_app", "root", "Bhaisachin12@");
+        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/learning_app", "root", "");
         System.out.println("Connection Established");
          PreparedStatement Check=con.prepareStatement("select Username from Login where username='"+Username+"'");
         ResultSet rs=Check.executeQuery();
@@ -576,7 +576,7 @@ LoginButton.setBackground(Color.white);        // TODO add your handling code he
         try{
              Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Driver Loaded");
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/learning_app", "root", "Bhaisachin12@");
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/learning_app", "root", "");
             System.out.println("Connection Established");
           } catch (ClassNotFoundException ex) {
             Logger.getLogger(Login_Signup.class.getName()).log(Level.SEVERE, null, ex);
